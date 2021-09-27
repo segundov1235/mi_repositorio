@@ -304,11 +304,11 @@ while(dato != pass && intentos > 0){
 }
 */
 
-let pass = 123456
+let numero = 123456
 let dato = Number(prompt("ingresa tu contraseña"))
 let intentos = 10
 
-while(dato != pass && intentos > 0){
+while(dato != numero && intentos > 0){
     alert(`contraseña incorrecta, te quedan ${intentos} intentos`);
     intentos--
     dato = Number(prompt("ingrese su contraseña"));

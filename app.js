@@ -25,9 +25,7 @@ alert("hola!")
  console.log(numero1 * numero2)
  console.log(numero1 / numero2)
  */
-
-
-
+//_______________________________________________________________________________________________________
 
  //condicionales//
  
@@ -49,7 +47,7 @@ alert("hola!")
      console.log("no hace frio, no hace falta ponerme un buzo");
  }
  
-
+//_______________________________________________________________________________________________________
 //operadores de comparacion
 
 asignar =
@@ -155,7 +153,7 @@ nombreDinamico = nombreDinamico.toLowerCase()
  }else{
      console.log(`no puede ingresar, ${nombreDinamico} no esta en la lista` )
  }
-*/
+
 
  
 let numero = Number(prompt("escriba un numero"))
@@ -178,4 +176,142 @@ if(number <=10){
     console.log("me gusta ese numero")
 }else{
     alert("¡numero incorrecto!")
+}
+*/
+//___________________________________________________________________________________________________________
+//ciclos / bucles
+//ciclo por conteo
+/*
+if(condicion){sentencia}
+fot(inicio, condicion, iteracion){sentencia}
+/*let numero = 0
+for(0; numero < 10; numero = numero + 1){
+    console.log("hola mundo")
+}
+//numero = i
+
+for(let i = 0; i < 10; i++){
+    console.log(i)
+}
+
+// si la condicion es true me ejecuta el codigo
+
+
+//cuando le sumamos 1 a un numero lo podemos resumir como ++
+//cuando le restamos 1 a un numero lo pedemos resumir como --
+
+//ciclo por condicion
+
+while(condicion verdadero){
+    me ejecuta la sentencia
+}
+
+    let num=0
+while(num < 10){
+    console.log(`estoy dentro de un bucle while ${num}`)
+    num++
+}
+ do{
+    sentencia
+ } while(condicion)
+
+
+ let num = 0
+
+do{
+    console.log("hola mundo")
+    num++
+}while(num < 10)
+*/
+
+
+
+
+/*
+numero 0 -> ejecuta for -> hola mmundo -> numero +1
+numero 1 -> ejecuta for -> hola mmundo -> numero +1
+numero 2 -> ejecuta for -> hola mmundo -> numero +1
+numero 3 .......
+numero 10 
+*/
+/*let num = Number( prompt("ingrese su numero"))
+
+for(let i = 1; i <= num; i ++) {
+    //modulo %
+    //en caso de que sean pares
+    if(i%2 == 0){
+        console.log("este numero es par" +i)
+    }else{
+        console.log("este numero es impar" +i);
+    }
+    
+}
+*/ 
+/*let num = Number(prompt("ingrese su numero"))
+for(let i = 1; i <= num; i++){
+    console.log(i)
+    if (i==5){
+        break
+    }
+    
+}
+*/
+
+//continue
+/*
+me frena la iteracion pero el ciclo continua
+//break
+me frena el ciclo
+*/
+
+//switch
+ /*let num = Number(prompt ("num"))
+switch(num){
+    case 3:
+        console.log("el numero ingresado es 3")
+        break
+    case 5:
+        console.log("el numero ingresado es 5")
+        break
+    case 7:
+        console.log("el numero ingresado es 7")
+        break
+    default:
+        console.log("el numero ingresado no me gusta")
+        break
+        
+}
+*/
+
+/*
+let pass = 22405
+let dato = Number(prompt("ingresa tu contraseña"))
+let intentos = 5
+
+while(dato != pass && intentos > 0){
+    alert(`contraseña incorrecta, te quedan ${intentos} intentos`);
+    intentos--
+    dato = Number(prompt("ingrese su contraseña"));
+
+    let validar = confirm("¿desea cambiar la contraseña?")
+
+    if(validar){
+        let passOld = prompt("ingrese contraseña vieja")
+        if(passOld == pass){
+            pass = Number(prompt("ingrese su nueva contraseña"))
+        }
+    }
+}
+*/
+
+let pass = 123456
+let dato = Number(prompt("ingresa tu contraseña"))
+let intentos = 10
+
+while(dato != pass && intentos > 0){
+    alert(`contraseña incorrecta, te quedan ${intentos} intentos`);
+    intentos--
+    dato = Number(prompt("ingrese su contraseña"));
+
+    
 }

@@ -246,7 +246,26 @@ for(let i = 1; i <= num; i ++) {
     }
     
 }
-*/ 
+*/ /*
+let pass = 22405
+let dato = Number(prompt("ingresa tu contraseña"))
+let intentos = 5
+
+while(dato != pass && intentos > 0){
+    alert(`contraseña incorrecta, te quedan ${intentos} intentos`);
+    intentos--
+    dato = Number(prompt("ingrese su contraseña"));
+
+    let validar = confirm("¿desea cambiar la contraseña?")
+
+    if(validar){
+        let passOld = prompt("ingrese contraseña vieja")
+        if(passOld == pass){
+            pass = Number(prompt("ingrese su nueva contraseña"))
+        }
+    }
+}
+*/
 /*let num = Number(prompt("ingrese su numero"))
 for(let i = 1; i <= num; i++){
     console.log(i)
@@ -283,26 +302,7 @@ switch(num){
 }
 */
 
-/*
-let pass = 22405
-let dato = Number(prompt("ingresa tu contraseña"))
-let intentos = 5
 
-while(dato != pass && intentos > 0){
-    alert(`contraseña incorrecta, te quedan ${intentos} intentos`);
-    intentos--
-    dato = Number(prompt("ingrese su contraseña"));
-
-    let validar = confirm("¿desea cambiar la contraseña?")
-
-    if(validar){
-        let passOld = prompt("ingrese contraseña vieja")
-        if(passOld == pass){
-            pass = Number(prompt("ingrese su nueva contraseña"))
-        }
-    }
-}
-*/
 
 let numero = 123456
 let dato = Number(prompt("ingresa tu contraseña"))

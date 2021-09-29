@@ -302,8 +302,9 @@ switch(num){
 }
 */
 
+///________
 
-
+/*
 let numero = 123456
 let dato = Number(prompt("ingresa tu contraseña"))
 let intentos = 10
@@ -314,4 +315,192 @@ while(dato != numero && intentos > 0){
     dato = Number(prompt("ingrese su contraseña"));
 
     
+}
+*/
+//_________
+//______________________________________________________________________________________________________________________________
+
+
+//                                           FUNCIONES
+/*///FUNCION DECLARADA/// function nombre (parametro){
+    sentencia
+}
+/*
+let dato = prompt("ingrese el dato a mostrar")
+let resultado = dato + "este dato viene por prompt"
+console.log(resultado)
+
+let dato1 = prompt("ingrese el dato a mostrar")
+let resultado1 = dato1 + "este dato viene por prompt"
+console.log(resultado1)
+
+let dato2 = prompt("ingrese el dato a mostrar")
+let resultado2 = dato2 + "este dato viene por prompt"
+console.log(resultado2)
+
+
+function nombre (parametros){
+    sentencia
+}
+*/
+/*
+function imprimirPorConsola () {
+    let dato = prompt("ingrese el dato a mostrar")
+    let resultado = dato +" este dato viene por prompt"
+    console.log(resultado)
+}
+imprimirPorConsola()
+imprimirPorConsola()
+imprimirPorConsola()
+imprimirPorConsola()
+imprimirPorConsola()
+imprimirPorConsola()
+imprimirPorConsola()
+imprimirPorConsola()
+imprimirPorConsola()
+imprimirPorConsola()
+*/
+
+
+/*
+let glob = "esta variable es global"
+
+
+/                     PARAMETRO
+
+function suma (num1,num2){
+    let local = "esta variable es local"
+    console.log(num1 + num2)
+    console.log(glob)
+    console.log(local)
+}
+console.log(glob)
+
+
+/                     ARGUMENTO
+
+suma(50,100)
+suma(25,75)
+suma(0,1)
+*/
+
+/*
+function validar(nombre){
+    let datoTrabajado = nombre.toLowerCase()
+
+    if(datoTrabajado == "juan"){
+        console.log("podes entrar")
+    }else{
+        console.log("no podes entrar")
+    }
+}
+validar("julian")
+validar("julian")
+validar("julian")
+validar("julian")
+validar("juan")
+
+
+function entrarAlEdificio(){
+    let pregunta = prompt("como te llamas?")
+    console.log( validar(pregunta))
+}
+
+function validar(nombre){
+    let datoTrabajado = nombre.toLowerCase()
+    if(datoTrabajado == "juan"){
+        return "podes entrar"
+    }else{
+        return "no podes pasar"
+    }
+}
+
+entrarAlEdificio()
+/*
+//                    RETURN
+function tomarDatos(){
+    let nombre = prompt ("nombre")
+    let apellido = prompt("apellido")
+    let edad = Number(prompt("edad"))
+
+    console.log(mostrarNombreCompeto(nombre,apellido,edad))
+}
+
+function mostrarNombreCompeto(nombre,apellido,edad) {
+    let respuesta =`tu nombre es ${nombre} ${apellido} y tenes ${edad}`;
+    return respuesta;
+
+}
+
+tomarDatos()
+*/
+///FUNCION EXPRESADA --> una variable a la que se le asigna una funcion anonima
+/*
+let unaMultiplicacion = function (){
+    console.log("hola mundo")
+}
+unaMultiplicacion()
+*/
+/// FUNCION FLECHA///
+/*
+let unaResta = numero => numero -10
+
+console.log(unaResta(101)) 
+*/
+/*
+pedirDatos()
+
+function pedirDatos(){
+    let num1 = Number( prompt("ingrese un numero"));
+    let operador = prompt("ingrese la operacion a realizar")
+    let num2 = Number( prompt("ingrese otro numero"));
+    calculadora(num1,operador, num2);
+    
+}
+
+function calculadora(a, b, c){
+
+    let res;
+
+    switch(b){
+        case "+" : res= a + c;
+        break;
+        case "-" : res= a - c;
+        break;
+        case "*" : res= a * c;
+        break;
+        case "/" : res= a / c;
+        break;
+        default : res= "Error";
+        break;
+
+
+    }
+    resultado(res);
+
+}
+
+
+function resultado(a){
+    console.log(a)
+    alert (a)
+}
+*/
+
+let num1 = Number(prompt("Ingrese edad de empleado"))
+let num2 = Number(prompt("Ingrese edad de otro empleado"))
+let num3 = Number(prompt("Ingrese edad de otro empleado"))
+let num4 = Number(prompt("Ingrese edad de otro empleado"))
+let num5 = Number(prompt("Ingrese edad de otro empleado"))
+
+let num6 = promedio(num1, num2, num3, num4, num5)
+
+console.log(num6)
+alert(`El promedio de edad de sus empleados es: ${num6}`)
+
+
+
+function promedio(a,b,c,d,e){
+    let resultado = (a+b+c+d+e) / 5;
+    return resultado
 }

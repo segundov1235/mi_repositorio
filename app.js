@@ -129,7 +129,7 @@ const producto4 = new Productos("gorra","nike", 1500, 15, true)
 */
 
 
-
+/*
 class Bebidas{
     constructor(nombre,marca,modelo,medida,precio,stock,disponible){
         this.nombre = nombre,
@@ -162,3 +162,10 @@ const producto8 = new Bebidas("Cerveza","Quilmes","Original","1L",200,150,true )
 const producto9 = new Bebidas("Cerveza","Quilmes","Original","473ml",140,250,true )
 const producto10 = new Bebidas("Cerveza","Brahma","Chopp","1L",260,150,true )
 const producto11 = new Bebidas("Cerveza","Brahma","Chopp","473ml",150,250,true )
+*/
+
+//___________________________________________//////ARRAYS//////_____________________________________________________
+
+let lista = ["persona","mascota",24,1000, true, false,{nombre:"segundo",apellido:"pereyra"},[1,2]
+]
+console.log(lista)

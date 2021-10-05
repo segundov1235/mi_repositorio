@@ -305,15 +305,7 @@ class Bebidas{
         this.stock = stock
         
     }
-    comprar(cantidad){
-        if(this.stock == 0){
-            console.log("No hay mas");
-            
-        }else{this.stock = this.stock - cantidad
-            console.log(`compraste ${cantidad} ${this.nombre}/s de la marca ${this.marca} de ${this.medida}, te costo $${this.precio * cantidad}. `)
-            alert(`compraste ${cantidad} ${this.nombre}/s de la marca ${this.marca} de ${this.medida}, te costo $${this.precio * cantidad}. `)
-    }
-    }
+
     
     
 }

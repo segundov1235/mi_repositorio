@@ -295,6 +295,7 @@ let search = prompt("que queres buscar")
 let buscadorMultiple = listasupermercado.filter(obj=> obj.nombre === search)
 console.log(buscadorMultiple)
 */
+/*
 class Bebidas{
     constructor(nombre,marca,modelo,medida,precio,stock){
         this.nombre = nombre,
@@ -354,9 +355,115 @@ listaBebidas.sort((a,b)=>{
 
 console.log(listaBebidas);
 
+*/
+/*
+let mensaje = "Hola Mundo"
 
+localStorage.setItem("saludo",mensaje)
 
+console.log(mensaje)
+console.log(localStorage.getItem("saludo"));
+*/
 
+//sessionStorage.setItem("temporal", 2021)
+/*
+class Producto {
+    constructor(nombre,precio){
+        this.nombre = nombre
+        this.precio = precio
+    }
+
+}
     
+let producto1 = new Producto("remera", 5000) 
+let producto2 = new Producto("pantalon",3000) 
+
+console.log()
+
+localStorage.setItem("pantalon",JSON.stringify(producto2))
+
+//DE JSON A OBJETO
+//JSON.parse(json)
+
+let dato = JSON.parse(localStorage.getItem("pantalon"))
+console.log(dato)
+*/
+
+console.log(document);
+console.log(document.body);
+
+//entrar por ID - getElementById()
+console.log(document.getElementById("unico"))
+    //ME TREAE SOLO UN OBJETO HTML
+
+
+//entrar por class - getElementsByClassName()
+console.log(document.getElementsByClassName("clase1"))
+    //ME TRAE UN ARRAY DE OBJETOS HTML
+
+
+//entrar por etiqueta - getElementsByTagName()
+console.log(document.getElementsByTagName("h1"))
+    //ME TRAE UN ARRAY DE OBJETOS HTML
+
+console.log(document.getElementsByTagName("p")[3])
+document.getElementsByTagName("p")[3].textContent="texto 3"
+
+
+
+//querySelector
+
+console.log(document.querySelector("#unico"))
+console.log(document.querySelector(".clase1"))
+console.log(document.querySelector("p"))
+//SOLAMENTE ME TRAE UN ELEMENTO EL 1º QUE ENCUENTRA
+
+console.log(document.querySelectorAll("P"))
+//ME TRAE TODOS LOS ELEMENTOS
+
+document.getElementById("unico").textContent="Tienda de bebidas"
+document.getElementById("unico").style.color="red"
+
+//document.getElementById("unico").style.display="none"
+
+document.getElementById("unico").setAttribute("class", "truco")
+
+//1) creo el elemento que quiero inyectar - document.createElement()
+const h2 = document.createElement("h2")
+h2 .setAttribute("id","elelmetoAgregado")
+h2.textContent="Bebidas"
+
+document.getElementById("aca").appendChild(h2)
+
+console.log(h2)
+
+class Bebidas{
+    constructor({nombre,marca,modelo,medida,precio,stock}){
+        this.nombre = nombre,
+        this.marca = marca,
+        this.modelo = modelo,
+        this.medida = medida,
+        this.precio = precio,
+        this.stock = stock
+       
+    }
+}
+
+const guardarDatos = () =>{
+
+const producto =new Bebidas(
+    {
+        nombre : document.getElementById("nombre").value,
+        marca : document.getElementById("marca").value,
+        modelo : document.getElementById("modelo").value,
+        medida : document.getElementById("medida").value,
+        precio : document.getElementById("precio").value,
+        stock : document.getElementById("stock").value
+    }
+    
+)
+return producto
+}
+
 
 

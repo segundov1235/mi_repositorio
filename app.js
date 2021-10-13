@@ -451,7 +451,7 @@ class Bebidas{
 
 const guardarDatos = () =>{
 
-const producto =new Bebidas(
+const producto = new Bebidas(
     {
         nombre : document.getElementById("nombre").value,
         marca : document.getElementById("marca").value,

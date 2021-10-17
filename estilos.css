@@ -1,3 +1,4 @@
+/*
 p{
     color: blue;
 }
@@ -6,4 +7,15 @@ p{
     color: chartreuse;
     font-size: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+*/
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: crimson;
+}
+p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 5px;
+    width: 400px;
+    border: black 1px solid;
 }

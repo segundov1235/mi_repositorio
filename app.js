@@ -388,7 +388,8 @@ localStorage.setItem("pantalon",JSON.stringify(producto2))
 let dato = JSON.parse(localStorage.getItem("pantalon"))
 console.log(dato)
 */
-
+/*
+__________________________________________________________________________________________________________________________
 console.log(document);
 console.log(document.body);
 
@@ -463,7 +464,63 @@ const producto = new Bebidas(
     
 )
 return producto
+
 }
+___________________________________________________________________________________________________________________________
+*/
+//________________________________________EVENTOS__________________________________________________________________________
+
+const input = document.getElementById("texto")
+
+const parrafo = document.getElementById("parrafo").style.fontSize = "20px"
+//const parrafo = document.getElementsByTagName("p")
+//const parrafo = document.querySelector("p")
+//const parrafo = document.querySelector("#parrafo")
+
+const boton = document.getElementById("btn")
+
+
+
+const escribir = () =>{
+    let texto = prompt("que queres escribir?")
+    parrafo.textContent = texto
+}
+
+//piomera forma de escuchar al evento
+
+//         palabra reservada
+//              ^
+//SELECTOR -> METODO(EVENTO, FUNCION) ->
+//boton. addEventListener("click", ()=>{
+//    escribir()
+//})
+
+// segunda forma de escuchar un evento resumida
+//boton.onclick = () => {escribir()}
+
+boton. addEventListener("click", (e)=>{
+    e.preventDefault()
+    validadora()
+    if(validadora == true){
+        document.getElementById("formulario").submit()
+    }
+    console.log(input.value);
+})
+const validadora = ()=>{
+    if(input.value.length > 5){
+        return input.value
+    }
+    
+}
+
+
+
+
+console.log(document)
+input.addEventListener("change", () => {
+    console.log("cambio el valor del texto")
+})
+
 
 
 

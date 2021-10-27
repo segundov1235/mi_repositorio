@@ -469,7 +469,7 @@ return producto
 ___________________________________________________________________________________________________________________________
 */
 //________________________________________EVENTOS__________________________________________________________________________
-
+/*
 const input = document.getElementById("texto")
 
 const parrafo = document.getElementById("parrafo").style.fontSize = "20px"
@@ -506,6 +506,251 @@ boton. addEventListener("click", (e)=>{
     }
     console.log(input.value);
 })
+
+const validadora = ()=>{
+    if(input.value.length > 5){
+        return input.value
+    }
+    
+}
+
+console.log(document)
+input.addEventListener("change", () => {
+    console.log("cambio el valor del texto")
+})
+*/
+/*
+
+
+//____________________________________CONDICIONALES_________________________________________________
+let nombreIngresado = prompt("Ingresar nombre");
+
+if((nombreIngresado !="")&& ((nombreIngresado == "EMA") || (nombreIngresado == "ema"))){
+    alert ("hola Ema");
+}else{
+    alert("Error: Ingresar nombre valido")
+}
+
+
+//_____________________________________BUCLES_________________________________________________________________________
+let entrada = prompt ("Ingresar un dato");
+
+while(entrada != "ESC"){
+    alert("El usuario ingreso " + entrada);
+
+    entrada = prompt("Ingresar otro dato");
+}
+
+
+//_____________________________________FUNCIONES______________________________________________________________________
+const suma = (a, b) => {return a + b};
+const resta = (a, b) => a - b ;
+console.log(suma(15,20));
+console.log(resta(20,5));
+
+
+//______________________________________OBJETOS_______________________________________________________________________
+function Persona(nombre, edad, calle){
+    this.nombre = nombre;
+    this.edad = edad;
+    this.calle = calle;
+    this.hablar = function() {console.log("Hola soy "+ this.nombre, "tengo "+ this.edad, "años y vivo en "+ this.calle)}
+}
+const persona1 = new Persona("Homero", 39, "Av. Siembreviva 742");
+const persona2 = new Persona("Marge", 36, "Av. Siempreviva 742");
+persona1.hablar();
+persona2.hablar();
+
+
+//_______________________________________ARRAYS_______________________________________________________________________
+const numeros = [1, 2, 3, 4, 5];
+const porDos  = numeros.map(x => x*2);//porDos = [2, 4, 6, 8, 10]
+const masCien = numeros.map(x => x+100);//porDos =[101, 102, 103, 104, 105] 
+
+const nombres = ["Ana", "Ema", "juan", "Elias"];
+const lengths = nombres.map(nombre => nombre.length);//lengths = [3, 3, 4, 5]
+
+
+//________________________________________STORAGE Y JSON______________________________________________________________
+const productos = [{id: 1, producto: "Arroz", precio: 125},
+                  { id: 2, producto: "Fideo", precio: 70},
+                  { id: 3, producto: "Pan"  , precio: 50},
+                  { id: 4, producto: "Flan" , precio: 100}]
+
+const guardarLocal = (clave, valor) => {localStorage.setItem(clave, valor)};
+//almacenar producto por producto
+for (const producto of productos){
+    guardarLocal(producto.id, JSON.stringify(producto));
+}
+//o almacenar array completo
+guardarLocal("listaProductos", JSON.stringify(productos));
+
+
+//_______________________________________EVENTOS EN EL DOM____________________________________________________________
+let miFormulario = document.getElementById("formulario");
+miFormulario.addEventListener("submit", validarFormulario);
+
+function validarFormulario(e){
+    e.preventDefault();
+    console.log("formulario enviado");
+}
+*/
+/*
+//ENTIDADES
+ 
+class Bebida {
+ 
+    constructor({
+        nombre,
+        marca,
+        modelo,
+        tamaño,
+        disponible = false,
+    }) {
+        this.nombre = nombre;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.tamaño = tamaño;
+        this.disponible = disponible;
+    }
+}
+
+
+//VARIABLES
+
+let listaBebidas = [];
+
+//FUNCIONES
+
+const crearBebida = () => {
+
+    const bebida = new Bebida({
+        nombre: document.getElementById("nombre").value,
+        marca: document.getElementById("marca").value,
+        modelo: document.getElementById("modelo").value,
+        tamaño: document.getElementById("tamaño").value,
+    })
+
+
+    let lista;
+    if (localStorage.getItem("listaBebidas") != null) {
+        lista = JSON.parse(localStorage.getItem("listaBebidas"))
+        lista.push(bebida)
+        localStorage.setItem("listaBebidas", JSON.stringify(lista))
+    }
+    listaBebidas.push(bebida)
+
+
+    return bebida
+}
+
+
+const guardarEnBaseDeDatos = () => {
+
+    crearBebida()
+
+    if (verificarStorage() != undefined) {
+        localStorage.setItem("listaBebidas", JSON.stringify(verificarStorage()))
+    } else {
+        localStorage.setItem("listaBebidas", JSON.stringify(listaBebidas))
+    }
+}
+
+
+const verificarStorage = () => {
+    let dato = [];
+    if (localStorage.getItem("listaBebidas") != null) {
+        dato = JSON.parse(localStorage.getItem("listaBebidas"))
+        return dato
+    }
+}
+
+
+const imprimirDatos = () => {
+
+    let indice = 0
+
+    verificarStorage().forEach(obj => {
+
+        indice += 1
+
+        document.getElementById("tabla").innerHTML += `
+        <tr>
+            <td>${indice}</td>
+            <td>${obj.nombre}</td>
+            <td>${obj.marca}</td>
+            <td>${obj.modelo}</td>
+            <td>${obj.tamaño}</td>
+            <td>${!obj.disponible ?'si':'no'}</td>
+            <td><button onclick=elimiarDeLaLista(${obj.marca})>X</button></td>
+        </tr>
+        `
+    });
+}
+//const parrafo = document.getElementsByTagName("p")
+//const parrafo = document.querySelector("p")
+//const parrafo = document.querySelector("#parrafo")
+
+//piomera forma de escuchar al evento
+
+//         palabra reservada
+//              ^
+//SELECTOR -> METODO(EVENTO, FUNCION) ->
+//boton. addEventListener("click", ()=>{
+//    escribir()
+//})
+
+// segunda forma de escuchar un evento resumida
+//boton.onclick = () => {escribir()}
+
+const elimiarDeLaLista = (marca) => {
+
+    let listaVieja = JSON.parse(localStorage.getItem("listaBebidas"))
+    let listaNueva = listaVieja.filter(e => e.marca != marca)
+
+    localStorage.setItem("listaBebidas", JSON.stringify(listaNueva))
+    location.reload()
+
+}
+
+//EVENTOS
+
+
+document.getElementById("btnSave").addEventListener("click", () => {
+    guardarEnBaseDeDatos()
+})
+
+if (localStorage.getItem("listaBebidas") != null) {
+    imprimirDatos()
+}
+
+console.log(verificarStorage())
+*/
+/*
+const input = document.getElementById("texto")
+
+const parrafo = document.getElementById("parrafo").style.fontSize = "20px"
+
+
+const boton = document.getElementById("btn")
+
+
+
+const escribir = () =>{
+    let texto = prompt("que queres escribir?")
+    parrafo.textContent = texto
+}
+
+
+
+boton. addEventListener("click", (e)=>{
+    e.preventDefault()
+    validadora()
+    if(validadora == true){
+        document.getElementById("formulario").submit()
+    }
+    console.log(input.value);
+})
 const validadora = ()=>{
     if(input.value.length > 5){
         return input.value
@@ -521,6 +766,21 @@ input.addEventListener("change", () => {
     console.log("cambio el valor del texto")
 })
 
+*/
+
+$(()=>{
+    $(".w").on("click",()=>{
+        alert("Compraste un whisky")
+    })
+    $(".c").on("click",()=>{
+        alert("Compraste una cerveza")
+    })
+    
+})
+
+$("h1").css({"color":"red"})
+
+$("#parrafo").text("¿Que producto desea comprar?")
 
 
 

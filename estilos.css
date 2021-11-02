@@ -1,6 +1,20 @@
-/*
-td{
-    padding: 10px;
-    border: solid 1px black;
+h1{
+    margin: 20px;
 }
-*/
+
+h3{
+    margin: 20px;
+}
+
+.w{
+    margin-left: 20px;
+    margin-bottom: 2px;
+}
+.c{
+    margin-left:20px ;
+    margin-bottom: 2px;
+}
+
+input{
+    margin-left: 20px;
+}

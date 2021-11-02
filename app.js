@@ -768,6 +768,7 @@ input.addEventListener("change", () => {
 
 */
 
+
 $(()=>{
     $(".w").on("click",()=>{
         alert("Compraste un whisky")
@@ -782,5 +783,29 @@ $("h1").css({"color":"red"})
 
 $("#parrafo").text("¿Que producto desea comprar?")
 
+
+
+const url = "http://www.dolarsi.com/api/api.php?type=valoresprincipales"
+
+setInterval(()=>{
+    $.get(url,(data, est)=> {
+        document.getElementById("dolar").innerHTML = ""
+        if(est == "success") {
+            console.log("Dolar Actualizado")
+            data.forEach(element => {
+                document.getElementById("dolar").innerHTML +=`
+                <div class="col-3">
+                    <p>${element.casa.nombre}</p>
+                    <p class="text-danger">${element.casa.compra}</p>
+                    <p class="text-success">${element.casa.venta}</p>
+                </div>
+                `
+                ;
+                
+            });
+        }
+    })
+
+},3000)
 
 
